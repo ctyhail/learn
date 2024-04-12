@@ -1,0 +1,56 @@
+v2->v3
+
+
+219 最上面的井盖删除
+102 uncovered->good
+131 远处的井盖删除
+20 最右边的半块奖盖删除
+182 最左边的半块奖盖删除
+269 ？
+267 circle->good
+278 左上角的井盖good->circle
+276 右边的井盖good->circle
+289 左右两边的边角奖盖删除
+46 最右边的井盖good->circle
+58 最上面的井盖good->circle 最中间的井盖good->circle
+97 good->circle
+
+               87.5%
+
+v3->v4
+
+
+100 good->circle//
+109 上方的井盖标注为uncovered
+129 右下角的奖盖标注为good//
+205 右下角的井盖删除//
+149 最右边的奖盖标注为good
+165 最右边的奖盖标注为circle//
+285 最左边的井盖good
+284 最右边井盖标注为lose
+
+                83.1%
+
+
+
+v4->v5
+100 circle->good//
+129 右下角的井盖good删除//
+205 右下角的奖盖标注为good//
+165 右边奖盖circle删除//
+
+
+以上几条建议不要修改
+                89.7%
+
+
+v5->v6
+219 上方奖盖标注为good
+102 good->uncovered
+20 右下角的奖盖标注为good
+320 中部偏右的井盖goog->circle
+
+
+
+
+
