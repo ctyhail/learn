@@ -649,7 +649,7 @@ int main()
 }
 ```
 
-# 友元
+## 友元
 
 在程序里，有些私有属性想要类外的一些函数或者类进行访问，就需要用到友元。所以友元的目的是让一个函数或者类访问另一个类中私有成员
 
@@ -661,5 +661,135 @@ int main()
 - 类做友元
 - 成员函数做友元
 
-## 全局函数做友元
+### 全局函数作友元
+
+```c++
+class Person
+{
+	friend void func(Person &p);//若没有这行代码，函数将无法访问类中私有成员
+	//friend的作用是告诉编译器这个函数可以访问类中的私有内容
+public:
+	Person()
+	{
+		m_A = 10;
+		m_B = 20;
+	}
+	int m_A;
+private:
+	int m_B;
+};
+//全局函数
+void func()
+{
+	cout<<m_A<<endl;
+	cout<<m_B<<endl;//这行
+}
+```
+
+### 类作友元
+
+与上面代码相似，只不过函数变成了类。
+
+### 成员函数作友元
+
+```c++
+class Person
+{	
+	...
+	public:
+	void func();
+};
+class Phone
+{
+	friend void Person::func();//这样使用
+}
+```
+
+## 运算符重载
+
+运算符重载概念：对已有的运算符进行定义，赋予其另一种功能，以适应不同的数据类型
+
+### 加号运算符重载
+
+作用：实现两个自定义数据类型相加的运算
+
+```C++
+class Person
+{
+	public:
+	int m_A = 10;
+	int m_B = 10;
+	//成员函数重载+号,其本质为 Person p3 = p1.operator+(p2)
+	Person operator+(Person &p)
+	{
+		Person temp;
+		temp.m_A = this->m_A + p.m_A;
+		temp.m_B = this->m_B + p.m_B;
+		return temp;
+	}
+};
+//通过全局函数重载+号，其本质为 Person p3 = operator+ (p1,p2)
+Person operator+(Person &p1,Person &p2)
+{
+	Person temp;
+	temp.m_A = p1.m_A + p2.m_A;
+	temp.m_B = p1.m_B + p2.m_B;
+	return temp;
+}
+```
+
+运算符重载也可以进行函数重载
+
+```c++
+Pesron p4 = p1 + 10;//这种操作可以用函数重载实现
+//重载（成员函数重载）为
+Person operator+(int num)
+{
+	Person temp;
+	temp.m_A = this->m_A + num;
+	temp.m_B = this->m_B + num;
+	return temp;
+}
+//全局函数重载
+Person operator+(Person &p1,int num)
+{
+	Person temp;
+	temp.m_A = this->m_A + num;
+	temp.m_B = this->m_B + num;
+	return temp;
+}
+```
+
+总结：
+
+1. 对于内置的数据类型的表达式的运算符是不可能改变的
+2. 不要滥用重载运算符
+
+### 左移运算符重载
+
+作用：可以输出自定义的数据类型
+
+```c++
+Person p;
+cout<<p<<endl;//左移运算符的作用
+```
+
+语法规则与加号运算符相似
+
+```c++
+//成员函数重载左移运算符 p.operator<<(cout) 简化版本为 p<<cout
+//一般不会利用成员函数重载<<运算符
+viod operator<<(cout)
+{
+	
+}
+//全局函数重载左移运算符
+ostream &operator<<(ostream &cout,Person &p)//链式编程，使输出返回值为标准输出流，可以向后追加输出内容
+{
+	cout<<"m_A:"<<m_A<<"m_B:"<<m_B<<endl;
+    return cout;
+}
+```
+
+### 递增运算符重载
 
