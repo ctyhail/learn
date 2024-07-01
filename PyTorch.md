@@ -19,17 +19,17 @@ pytorch中数据类型有：
 - IntTensor of size[d1,d2,...]
 - FloatTensor of size[d1,d2,...]
 
-![image-20240125203746383](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240125203746383.png)
+![image-20240125203746383](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240125203746383.png)
 
 ## type check
 
 `a = torch.randn.(2,3)`。用`type`有两种使用方法：
 
-![image-20240125204340778](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240125204340778.png)
+![image-20240125204340778](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240125204340778.png)
 
 或者用`isinstance()`比较两个数据类型是否相同，相同则返回True，不同则返回False。
 
-注意：Tensor在GPU和CPU上的部署是不一样的![image-20240125204729079](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240125204729079.png)
+注意：Tensor在GPU和CPU上的部署是不一样的![image-20240125204729079](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240125204729079.png)
 
 ## 维度变换
 
@@ -41,11 +41,11 @@ pytorch中数据类型有：
 
 `expand`操作的维度必须是1。`expand`操作：
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240130160455074.png" alt="image-20240130160455074" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240130160455074.png" alt="image-20240130160455074" style="zoom:50%;" />
 
 `repeat`操作：
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240130160631242.png" alt="image-20240130160631242" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240130160631242.png" alt="image-20240130160631242" style="zoom:50%;" />
 
 ### transpose
 
@@ -59,7 +59,7 @@ pytorch中数据类型有：
 
 与`transpose`一样可以进行维度变换，但要这样使用：
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240130162338332.png" alt="image-20240130162338332" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240130162338332.png" alt="image-20240130162338332" style="zoom:50%;" />
 
 ### view/reshape
 
@@ -69,7 +69,7 @@ PyTorch中的`view`和`reshape`和Numpy中的`reshape`中的作用基本相同�
 
 在目标维度插入一个新的维度
 
-![image-20240126172620602](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240126172620602.png)
+![image-20240126172620602](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240126172620602.png)
 
 
 
@@ -92,7 +92,7 @@ print(a.index_select(0,[0,2]))
 
 ### mask掩码索引
 
-![image-20240126170546225](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240126170546225.png)
+![image-20240126170546225](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240126170546225.png)
 
 ### take
 
@@ -191,7 +191,7 @@ b = torch.take(a,torch.tensor([0,2,5]))
 
 对梯度进行裁剪。用法为：
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240228223048746.png" alt="image-20240228223048746" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240228223048746.png" alt="image-20240228223048746" style="zoom:50%;" />
 
 只有一个参数是(min),有两个参数是(min,max)。小于`min`的数将变为`min`的数，大于`max`的数变为`max`的数。
 
@@ -212,7 +212,7 @@ a.topk(个数,dim,largest=False/True)
 
 ```
 
-![image-20240229220042460](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240229220042460.png)
+![image-20240229220042460](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240229220042460.png)
 
 ### kthvalue
 
@@ -234,7 +234,7 @@ kthvalue(num,dim)
 
 ### where
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240229224505880.png" alt="image-20240229224505880" style="zoom: 33%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240229224505880.png" alt="image-20240229224505880" style="zoom: 33%;" />
 
 `cond`中对应大于0.5，就选`a`中对应元素，否则就选`b`。
 
@@ -242,11 +242,11 @@ kthvalue(num,dim)
 
 单层感知机的梯度推导（其中激活函数为sigmod函数）
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240310171751056.png" alt="image-20240310171751056" style="zoom: 25%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240310171751056.png" alt="image-20240310171751056" style="zoom: 25%;" />
 
 多层感知机的梯度推导（其中激活函数为sigmod函数）
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240310180302396.png" alt="image-20240310180302396" style="zoom:25%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240310180302396.png" alt="image-20240310180302396" style="zoom:25%;" />
 
 如果中间隐藏层不止一层，可以通过上述的推导一步一步得将梯度反向传播。
 
@@ -254,23 +254,23 @@ kthvalue(num,dim)
 
 ### Leaky ReLU
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240310211307514.png" alt="image-20240310211307514" style="zoom: 25%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240310211307514.png" alt="image-20240310211307514" style="zoom: 25%;" />
 
 其中`a`的值通常很小，一般设定值为0.02，为了避免`ReLu`函数在x<0时梯度为0导致网络中的参数不变化。
 
 ### SELU
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240310212047303.png" alt="image-20240310212047303" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240310212047303.png" alt="image-20240310212047303" style="zoom:50%;" />
 
 其图像为：
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240310211833065.png" alt="image-20240310211833065" style="zoom: 50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240310211833065.png" alt="image-20240310211833065" style="zoom: 50%;" />
 
-使得当x<0时能有更光滑的曲线。、
+使得当x<0时能有更光滑的曲线。
 
 ### Softpuls
 
-<img src="C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240310212500200.png" alt="image-20240310212500200" style="zoom:50%;" />
+<img src="https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240310212500200.png" alt="image-20240310212500200" style="zoom:50%;" />
 
 相比与`ReLu`激活函数，当x=0时有更光滑的处理。
 
@@ -278,6 +278,6 @@ kthvalue(num,dim)
 
 在新版`pytorch`中可以用如图所示的方法使用GPU加速或CPU加速，能够合理地分配算力
 
-![image-20240311195916771](C:/Users/20247/AppData/Roaming/Typora/typora-user-images/image-20240311195916771.png)
+![image-20240311195916771](https://cdn.jsdelivr.net/gh/ctyhail/image_bed@master/image/image-20240311195916771.png)
 
 先创建一个设备`device`，需要用此设备的算力可以在后面添加`.to(device)`。其中创建`device`时中`cuda:0`表示0号GPU，如果有多块GPU后面的数字以次增加。
